@@ -7,9 +7,9 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/infracloudio/msbotbuilder-go/core"
-	"github.com/infracloudio/msbotbuilder-go/core/activity"
-	"github.com/infracloudio/msbotbuilder-go/schema"
+	"github.com/EchoesHQ/msbotbuilder-go/core"
+	"github.com/EchoesHQ/msbotbuilder-go/core/activity"
+	"github.com/EchoesHQ/msbotbuilder-go/schema"
 )
 
 var customHandler = activity.HandlerFuncs{
@@ -24,7 +24,6 @@ type HTTPHandler struct {
 }
 
 func (ht *HTTPHandler) processMessage(w http.ResponseWriter, req *http.Request) {
-
 	ctx := context.Background()
 	activity, err := ht.Adapter.ParseRequest(ctx, req)
 	if err != nil {
@@ -43,7 +42,6 @@ func (ht *HTTPHandler) processMessage(w http.ResponseWriter, req *http.Request) 
 }
 
 func main() {
-
 	setting := core.AdapterSetting{
 		AppID:       os.Getenv("APP_ID"),
 		AppPassword: os.Getenv("APP_PASSWORD"),

@@ -3,15 +3,14 @@ package core
 import (
 	"context"
 
-	"github.com/infracloudio/msbotbuilder-go/connector/auth"
-	"github.com/infracloudio/msbotbuilder-go/schema"
+	"github.com/EchoesHQ/msbotbuilder-go/connector/auth"
+	"github.com/EchoesHQ/msbotbuilder-go/schema"
 )
 
 // All the mocks and stubs for BotFrameworkAdapter goes here.
 
 // MockTokenValidator stub for bypassing the authentication
-type MockTokenValidator struct {
-}
+type MockTokenValidator struct{}
 
 // AuthenticateRequest mock implementation for authentication
 func (jv *MockTokenValidator) AuthenticateRequest(ctx context.Context, activity schema.Activity, authHeader string, credentials auth.CredentialProvider, channelService string) (auth.ClaimsIdentity, error) {

@@ -24,10 +24,10 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"github.com/infracloudio/msbotbuilder-go/connector/auth"
-	"github.com/infracloudio/msbotbuilder-go/connector/client"
-	"github.com/infracloudio/msbotbuilder-go/core/activity"
-	"github.com/infracloudio/msbotbuilder-go/schema"
+	"github.com/EchoesHQ/msbotbuilder-go/connector/auth"
+	"github.com/EchoesHQ/msbotbuilder-go/connector/client"
+	"github.com/EchoesHQ/msbotbuilder-go/core/activity"
+	"github.com/EchoesHQ/msbotbuilder-go/schema"
 	"github.com/pkg/errors"
 )
 
@@ -161,7 +161,6 @@ func (bf *BotFrameworkAdapter) ParseRequest(ctx context.Context, req *http.Reque
 }
 
 func (bf *BotFrameworkAdapter) authenticateRequest(ctx context.Context, req schema.Activity, headers string) error {
-
 	_, err := bf.TokenValidator.AuthenticateRequest(ctx, req, headers, bf.CredentialProvider, bf.ChannelService)
 
 	return errors.Wrap(err, "Authentication failed.")
@@ -170,7 +169,6 @@ func (bf *BotFrameworkAdapter) authenticateRequest(ctx context.Context, req sche
 // UpdateActivity Updates an existing activity
 func (bf *BotFrameworkAdapter) UpdateActivity(ctx context.Context, req schema.Activity) error {
 	response, err := activity.NewActivityResponse(bf.Client)
-
 	if err != nil {
 		return errors.Wrap(err, "Failed to create response object.")
 	}

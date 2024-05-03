@@ -1,19 +1,19 @@
 # Bot Framework File Upload Sample
 
-This Microsoft Teams bot example uses the [msbotbuilder-go](https://github.com/infracloudio/msbotbuilder-go) library. It shows how to handle `invoke` activity and upload local file from Bot to use.
+This Microsoft Teams bot example uses the [msbotbuilder-go](https://github.com/EchoesHQ/msbotbuilder-go) library. It shows how to handle `invoke` activity and upload local file from Bot to use.
 
 As documented [here](https://developer.microsoft.com/en-us/microsoft-teams/blogs/working-with-files-in-your-microsoft-teams-bot/), following is the workflow for sending files from Bot to user:
 
 1. **Request permission to upload the file:**
-    First, ask the user for permission to upload a file by sending a file `consent card`.
+   First, ask the user for permission to upload a file by sending a file `consent card`.
 2. **User accepts or declines the file**
-    When the user presses either “Allow” or “Decline”, your bot will receive an invoke activity.
+   When the user presses either “Allow” or “Decline”, your bot will receive an invoke activity.
 3. **Handle invoke activity**
-    If the file was accepted, activity value contains an uploadInfo property. To set the file contents, issue PUT requests to the URL in uploadInfo.uploadUrl as described [here](https://docs.microsoft.com/en-us/onedrive/developer/rest-api/api/driveitem_createuploadsession?view=odsp-graph-online#upload-bytes-to-the-upload-session)
+   If the file was accepted, activity value contains an uploadInfo property. To set the file contents, issue PUT requests to the URL in uploadInfo.uploadUrl as described [here](https://docs.microsoft.com/en-us/onedrive/developer/rest-api/api/driveitem_createuploadsession?view=odsp-graph-online#upload-bytes-to-the-upload-session)
 4. **Delete consent card**
-    Once user responds to file upload request, the `consent card` is deleted.
-4. **Send the user a link to the uploaded file**
-    After you finish the upload, send a link to the file with file `info card`.
+   Once user responds to file upload request, the `consent card` is deleted.
+5. **Send the user a link to the uploaded file**
+   After you finish the upload, send a link to the file with file `info card`.
 
 ## Run the example
 
@@ -52,7 +52,6 @@ Copy `https` endpoint, go to [Bot Framework](https://dev.botframework.com/bots) 
 
 You can either test BOT on BotFramework portal or you can create app manifest and install the App on Teams as mentioned [here](https://docs.microsoft.com/en-us/microsoftteams/platform/bots/how-to/create-a-bot-for-teams#create-your-app-manifest-and-package).
 
-
 ## Understanding the example
 
 The program starts by creating a handler structs of type `activity.HandlerFuncs`.
@@ -63,7 +62,6 @@ This example contains following handlers:
 
 `OnInvokeFunc` - parses `invoke` activity, uploads file and notifies user with file `info card`
 
-
 The `init` function picks up the `APP_ID` and `APP_PASSWORD` from the environment session and creates an `adapter` using this.
 
 The consent cleanup `cleanupConsents()` is started as a go routine to delete processed consent cards.
@@ -73,7 +71,6 @@ A webserver is started with a handler which passes the received payload to `adap
 ```
 activity, err := adapter.ParseRequest(ctx, req)
 ```
-  
 
 The Activity is then passed to `adapter.ProcessActivity` with the handler created to process the activity as per the handler functions and send the response to the connector service.
 

@@ -8,9 +8,9 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/infracloudio/msbotbuilder-go/core"
-	"github.com/infracloudio/msbotbuilder-go/core/activity"
-	"github.com/infracloudio/msbotbuilder-go/schema"
+	"github.com/EchoesHQ/msbotbuilder-go/core"
+	"github.com/EchoesHQ/msbotbuilder-go/core/activity"
+	"github.com/EchoesHQ/msbotbuilder-go/schema"
 )
 
 // Card content
