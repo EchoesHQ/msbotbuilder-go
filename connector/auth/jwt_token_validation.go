@@ -28,9 +28,9 @@ import (
 	"strings"
 	"time"
 
+	"github.com/EchoesHQ/msbotbuilder-go/connector/cache"
+	"github.com/EchoesHQ/msbotbuilder-go/schema"
 	"github.com/golang-jwt/jwt/v4"
-	"github.com/infracloudio/msbotbuilder-go/connector/cache"
-	"github.com/infracloudio/msbotbuilder-go/schema"
 	"github.com/lestrrat-go/jwx/jwk"
 )
 
@@ -101,9 +101,7 @@ func (jv *JwtTokenValidator) AuthenticateRequest(ctx context.Context, activity s
 }
 
 func (jv *JwtTokenValidator) getIdentity(jwtString string) (ClaimsIdentity, error) {
-
 	getKey := func(token *jwt.Token) (interface{}, error) {
-
 		jwksURL, err := jv.getJwkURL(metadataURL)
 		if err != nil {
 			return nil, err

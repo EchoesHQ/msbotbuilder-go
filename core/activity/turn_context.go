@@ -20,7 +20,7 @@
 package activity
 
 import (
-	"github.com/infracloudio/msbotbuilder-go/schema"
+	"github.com/EchoesHQ/msbotbuilder-go/schema"
 	"github.com/pkg/errors"
 )
 

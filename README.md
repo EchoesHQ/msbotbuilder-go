@@ -1,13 +1,13 @@
 # Microsoft Bot Framework SDK for Go
 
-[![Build Status](https://travis-ci.org/infracloudio/msbotbuilder-go.svg?branch=develop)](https://travis-ci.org/infracloudio/msbotbuilder-go) [![GoDoc](https://godoc.org/github.com/infracloudio/msbotbuilder-go?status.svg)](https://godoc.org/github.com/infracloudio/msbotbuilder-go)
+[![Build Status](https://travis-ci.org/infracloudio/msbotbuilder-go.svg?branch=develop)](https://travis-ci.org/infracloudio/msbotbuilder-go) [![GoDoc](https://godoc.org/github.com/EchoesHQ/msbotbuilder-go?status.svg)](https://godoc.org/github.com/EchoesHQ/msbotbuilder-go)
 
 This repository is the Go version of the Microsoft Bot Framework SDK. It facilitates developers to build bot applications using the Go language.
 
 ## Installing
 
 ```sh
-$ go get -u github.com/infracloudio/msbotbuilder-go/...
+$ go get -u github.com/EchoesHQ/msbotbuilder-go/...
 ```
 
 ## Get started with example
@@ -35,6 +35,7 @@ This is the endpoint which the connector service for the registered bot should p
 ## Contributing
 
 We love your input! We want to make contributing to this project as easy and transparent as possible, whether it's:
+
 - Reporting a bug
 - Discussing the current state of the code
 - Submitting a fix
