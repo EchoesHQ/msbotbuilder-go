@@ -31,10 +31,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/infracloudio/msbotbuilder-go/connector/auth"
-	"github.com/infracloudio/msbotbuilder-go/connector/cache"
-	"github.com/infracloudio/msbotbuilder-go/schema"
-	"github.com/infracloudio/msbotbuilder-go/schema/customerror"
+	"github.com/EchoesHQ/msbotbuilder-go/connector/auth"
+	"github.com/EchoesHQ/msbotbuilder-go/connector/cache"
+	"github.com/EchoesHQ/msbotbuilder-go/schema"
+	"github.com/EchoesHQ/msbotbuilder-go/schema/customerror"
 )
 
 // Client provides interface to send requests to the connector service.
@@ -177,7 +177,6 @@ func (client *ConnectorClient) checkRespError(resp *http.Response) error {
 }
 
 func (client *ConnectorClient) getToken(ctx context.Context) (string, error) {
-
 	// Return cached JWT
 	if !client.AuthCache.IsExpired() {
 		return client.AuthCache.Keys.(string), nil
